@@ -1,0 +1,37 @@
+[
+  {
+    "test_case_id": "TC-001",
+    "ai_response": "Since you placed the order yesterday, it should still be possible to cancel it. Please contact Customer Support to cancel your order.",
+    "scores": {
+      "correctness": 0,
+      "completeness": 0,
+      "groundedness": 0,
+      "instruction_following": 0
+    },
+    "total_score": 0,
+    "max_score": 4,
+    "critical_failure": false,
+    "overall_result": "FAIL",
+    "failure_type": {
+      "code": "FM-02",
+      "name": "Missing-information assumption"
+    },
+    "reason": "The AI concluded that cancellation should be possible without knowing whether the order had already been shipped."
+  },
+  {
+  "test_case_id": "TC-003",
+  "ai_response": "The available policy doesn't confirm that damaged orders qualify for a refund. Please contact Customer Support and provide your order number and a photo of the damaged item.",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "groundedness": 1,
+    "instruction_following": 1
+  },
+  "total_score": 4,
+  "max_score": 4,
+  "critical_failure": false,
+  "overall_result": "PASS",
+  "failure_type": null,
+  "reason": "The response correctly addresses the refund uncertainty, follows the damaged-order policy, and does not introduce unsupported information."
+}
+]

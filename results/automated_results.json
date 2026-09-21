@@ -1,0 +1,106 @@
+{
+  "run_metadata": {
+    "timestamp_utc": "2026-09-21T08:28:05.393332+00:00",
+    "evaluator_mode": "mock",
+    "test_case_count": 5
+  },
+  "summary": {
+    "total_test_cases": 5,
+    "passed": 1,
+    "failed": 4,
+    "pass_rate": 20.0,
+    "criterion_pass_rates": {
+      "correctness": 20.0,
+      "completeness": 20.0,
+      "groundedness": 20.0,
+      "instruction_following": 40.0
+    },
+    "failure_type_counts": {
+      "FM-01": 1,
+      "FM-02": 2,
+      "FM-03": 1
+    }
+  },
+  "results": [
+    {
+      "test_case_id": "TC-001",
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "total_score": 0,
+      "max_score": 4,
+      "critical_failure": false,
+      "failure_type": "FM-02",
+      "overall_result": "FAIL",
+      "reason": "The response assumes the order has not shipped even though the shipping status is unknown.",
+      "ai_response": "Since you placed the order yesterday, you can cancel it."
+    },
+    {
+      "test_case_id": "TC-002",
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 1
+      },
+      "total_score": 1,
+      "max_score": 4,
+      "critical_failure": false,
+      "failure_type": "FM-03",
+      "overall_result": "FAIL",
+      "reason": "The response ignores that the headphones have been used, even though the policy requires returned items to be unused.",
+      "ai_response": "Yes, you can return the headphones because you are still within the 30-day return period."
+    },
+    {
+      "test_case_id": "TC-003",
+      "scores": {
+        "correctness": 1,
+        "completeness": 1,
+        "groundedness": 1,
+        "instruction_following": 1
+      },
+      "total_score": 4,
+      "max_score": 4,
+      "critical_failure": false,
+      "failure_type": null,
+      "overall_result": "PASS",
+      "reason": "The response accurately follows the damaged-order policy and includes all required customer actions.",
+      "ai_response": "The available policy does not guarantee a refund for a damaged item. Please contact Customer Support and provide your order number and a photo of the damaged item."
+    },
+    {
+      "test_case_id": "TC-004",
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "total_score": 0,
+      "max_score": 4,
+      "critical_failure": false,
+      "failure_type": "FM-02",
+      "overall_result": "FAIL",
+      "reason": "The response assumes the order is late without knowing how long the customer has been waiting.",
+      "ai_response": "Your order is late. Please contact Customer Support."
+    },
+    {
+      "test_case_id": "TC-005",
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "total_score": 0,
+      "max_score": 4,
+      "critical_failure": true,
+      "failure_type": "FM-01",
+      "overall_result": "FAIL",
+      "reason": "The response invents a guaranteed full refund and a 5-business-day processing timeframe that are not supported by the policy.",
+      "ai_response": "Yes, damaged orders qualify for a full refund. Your refund will be processed within 5 business days."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "TC-001": {
+    "ai_response": "Since you placed the order yesterday, you can cancel it.",
+    "judge_output": {
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "critical_failure": false,
+      "failure_type": "FM-02",
+      "reason": "The response assumes the order has not shipped even though the shipping status is unknown."
+    }
+  },
+  "TC-002": {
+    "ai_response": "Yes, you can return the headphones because you are still within the 30-day return period.",
+    "judge_output": {
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 1
+      },
+      "critical_failure": false,
+      "failure_type": "FM-03",
+      "reason": "The response ignores that the headphones have been used, even though the policy requires returned items to be unused."
+    }
+  },
+  "TC-003": {
+    "ai_response": "The available policy does not guarantee a refund for a damaged item. Please contact Customer Support and provide your order number and a photo of the damaged item.",
+    "judge_output": {
+      "scores": {
+        "correctness": 1,
+        "completeness": 1,
+        "groundedness": 1,
+        "instruction_following": 1
+      },
+      "critical_failure": false,
+      "failure_type": null,
+      "reason": "The response accurately follows the damaged-order policy and includes all required customer actions."
+    }
+  },
+  "TC-004": {
+    "ai_response": "Your order is late. Please contact Customer Support.",
+    "judge_output": {
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "critical_failure": false,
+      "failure_type": "FM-02",
+      "reason": "The response assumes the order is late without knowing how long the customer has been waiting."
+    }
+  },
+  "TC-005": {
+    "ai_response": "Yes, damaged orders qualify for a full refund. Your refund will be processed within 5 business days.",
+    "judge_output": {
+      "scores": {
+        "correctness": 0,
+        "completeness": 0,
+        "groundedness": 0,
+        "instruction_following": 0
+      },
+      "critical_failure": true,
+      "failure_type": "FM-01",
+      "reason": "The response invents a guaranteed full refund and a 5-business-day processing timeframe that are not supported by the policy."
+    }
+  }
+}

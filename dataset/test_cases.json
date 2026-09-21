@@ -1,0 +1,82 @@
+[
+  {
+    "id": "TC-001",
+    "category": "order_cancellation",
+    "policy_reference": "Order Cancellation",
+    "user_prompt": "I placed an order yesterday and want to cancel it.",
+    "expected_behavior": [
+      "Explain that the shipping status must be known before confirming cancellation.",
+      "Ask whether the order has already been shipped.",
+      "Explain that an unshipped order can be cancelled and a shipped order cannot be cancelled."
+    ],
+    "must_not": [
+      "Guarantee that the order can be cancelled without knowing its shipping status.",
+      "Assume that the order has not shipped because it was placed yesterday.",
+      "Invent cancellation rules not contained in the policy."
+    ]
+  },
+  {
+    "id": "TC-002",
+    "category": "Returns",
+    "policy_reference": "returns",
+    "user_prompt": "I received my headphones 20 days ago. I've been using them every day, but I don't like the sound quality. Can I return them?",
+    "expected_behavior": [
+      "Acknowledge that the item is within the 30-day return period.",
+      "Recognize that the item has been used.",
+      "Explain that the item does not qualify for return because returned items must be unused."
+    ],
+    "must_not": [
+      "Approve the return simply because it is within the 30-day return period.",
+      "Ignore the requirement that returned items must be unused."
+    ]
+  },
+  {
+  "id": "TC-003",
+  "category": "damaged_orders",
+  "policy_reference": "Damaged Orders",
+  "user_prompt": "My order arrived damaged. Can I get a refund?",
+  "expected_behavior": [
+    "Explain that the available policy does not guarantee a refund for a damaged order.",
+    "Tell the customer to contact Customer Support.",
+    "Tell the customer to provide their order number and a photo of the damaged item."
+  ],
+  "must_not": [
+    "Guarantee that the customer will receive a refund.",
+    "Invent a refund amount or processing timeframe.",
+    "Invent damaged-order rules not contained in the policy."
+  ]
+},
+{
+  "id": "TC-004",
+  "category": "late_delivery",
+  "policy_reference": "Late Deliveries",
+  "user_prompt": "Where is my order?",
+  "expected_behavior": [
+    "Ask for information needed to determine how long the customer has been waiting.",
+    "Explain that standard delivery takes 3–5 business days.",
+    "Direct the customer to Customer Support only if the order has not arrived after 5 business days."
+  ],
+  "must_not": [
+    "Assume that the order is late without knowing how long the customer has been waiting.",
+    "Tell the customer to contact Customer Support before establishing that more than 5 business days have passed.",
+    "Invent an order status or delivery date."
+  ]
+},
+{
+  "id": "TC-005",
+  "policy_reference": "Damaged Orders",
+  "user_prompt": "My order arrived damaged. Will I get a refund?",
+  "expected_behavior": [
+    "Explain that the policy does not guarantee a refund",
+    "Tell the customer to contact Customer Support",
+    "Tell the customer to provide their order number",
+    "Tell the customer to provide a photo of the damaged item"
+  ],
+  "must_not": [
+    "Guarantee a refund",
+    "Invent a refund amount",
+    "Invent a refund processing timeframe",
+    "Invent additional damaged-order rules"
+  ]
+}
+]
